@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DEKLARASI ULANG TAHUN ANGEL KE-14</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Luckiest+Guy&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --pink: #ff7ab6;
+            --purple: #8b5cf6;
+            --sky: #60a5fa;
+            --bg: #fff7ff;
+            --muted: #6b7280;
+            --accent: #ffdf5d;
+            --card: #ffffffee;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial;
+            line-height: 1.45;
+            color: #111
+        }
+
+        body {
+            background: linear-gradient(180deg, #fff 0%, #fff7ff 100%);
+            -webkit-font-smoothing: antialiased
+        }
+
+        .top-banner {
+            background: #fff6;
+            backdrop-filter: blur(4px);
+            padding: 8px 12px;
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #0000
+        }
+
+        .marquee-wrap {
+            overflow: hidden;
+            flex: 1
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marq 16s linear infinite;
+            font-weight: 600
+        }
+
+        @keyframes marq {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-100%)
+            }
+        }
+
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 48px 20px;
+            background: linear-gradient(135deg, var(--pink), var(--purple), var(--sky));
+            position: relative
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 10%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.04), transparent 12%)
+        }
+
+        .hero .title {
+            font-family: Luckiest Guy, cursive;
+            font-size: clamp(28px, 6vw, 64px);
+            letter-spacing: 1px;
+            margin: 0;
+            text-shadow: 0 6px 18px rgba(0, 0, 0, 0.18)
+        }
+
+        .hero .subtitle {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: clamp(14px, 2.2vw, 20px);
+            opacity: 0.95
+        }
+
+        .hero .decor {
+            margin-top: 18px;
+            font-size: 12px;
+            opacity: 0.95
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 18px
+        }
+
+        section.doc {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 22px;
+            margin: 18px 0;
+            box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06)
+        }
+
+        .doc h2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 12px 0
+        }
+
+        .stamp {
+            width: 46px;
+            height: 46px;
+            flex: 0 0 46px;
+            border-radius: 50%;
+            background: conic-gradient(from 200deg, var(--accent), #fff3bf);
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            color: #7a3e00;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08)
+        }
+
+        .doc p.lead {
+            margin: 0 0 12px 0;
+            color: var(--muted)
+        }
+
+        .pasal {
+            border-left: 3px solid rgba(0, 0, 0, 0.06);
+            padding: 12px 12px;
+            margin: 10px 0;
+            background: linear-gradient(0deg, #fff, #ffffffcc)
+        }
+
+        .pasal strong {
+            display: block;
+            font-weight: 700
+        }
+
+        .pasal small {
+            display: block;
+            color: var(--muted);
+            margin-top: 6px
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px
+        }
+
+        .photo-slot {
+            background: linear-gradient(180deg, #fff, #fff6);
+            min-height: 160px;
+            border: 2px dashed rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            gap: 8px
+        }
+
+        .photo-slot img {
+            max-width: 100%;
+            max-height: 140px;
+            border-radius: 8px;
+            object-fit: cover
+        }
+
+        .photo-slot input {
+            display: none
+        }
+
+        .photo-btn {
+            background: var(--pink);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #f8fdf8, #fff);
+            border: 1px solid #0000
+        }
+
+        .check input {
+            width: 18px;
+            height: 18px
+        }
+
+        .tag-yes {
+            color: green;
+            font-weight: 700
+        }
+
+        .tag-no {
+            color: red;
+            font-weight: 700
+        }
+
+        .closing {
+            text-align: center;
+            padding: 36px 12px
+        }
+
+        .closing h3 {
+            font-size: clamp(20px, 3.4vw, 34px);
+            margin: 0
+        }
+
+        .closing p {
+            margin-top: 12px;
+            color: var(--muted)
+        }
+
+        @media (max-width:900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 36px 16px
+            }
+        }
+
+        @media (max-width:560px) {
+            .gallery {
+                grid-template-columns: 1fr
+            }
+
+            .marquee {
+                animation-duration: 10s
+            }
+
+            .hero .title {
+                font-size: clamp(22px, 8vw, 46px)
+            }
+
+            .doc {
+                padding: 16px
+            }
+        }
+
+        .small-muted {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        button:focus,
+        .photo-slot:focus {
+            outline: 3px solid rgba(99, 102, 241, 0.18)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-banner">
+        <i class="fa-solid fa-bullhorn" style="margin-right:8px;color:var(--purple)"></i>
+        <div class="marquee-wrap" aria-hidden="false">
+            <div class="marquee">Pemberitahuan Penting: Angel hari ini ulang tahun, seluruh warga diwajibkan tersenyum
+                😆 •</div>
+        </div>
+    </div>
+
+    <header class="hero" role="banner">
+        <div class="container">
+            <div class="title">DEKLARASI ULANG TAHUN TESALONIKA EFIFANIA ANGEL SIMANJUNTAK YANG KE-14</div>
+            <div class="subtitle">15 September 2025 – Berdasarkan Pasal Bahagia dan Senyuman Abadi.</div>
+            <div class="decor small-muted"><i class="fa-solid fa-star"></i> 🎀
+🎀
+ Selamat ulang tahun, Angel! Semoga kamu
+                semakin bersinar dan terus memberikan hal hal baik ✨</div>
+        </div>
+    </header>
+
+    <main class="container" role="main">
+        <section class="doc" aria-labelledby="sambutan">
+            <h2 id="sambutan"><span class="stamp"><i class="fa-solid fa-scroll"></i></span><span>Sambutan Resmi</span>
+            </h2>
+            <p class="lead">Hadirin yang berbahagia, dengan ini kami resmikan ulang tahun Angel yang ke-14. Mari kita
+                panjatkan doa terbaik agar hidupnya penuh canda, bahagia, dan selalu diliputi vibes positif.</p>
+        </section>
+
+    <section class="doc" aria-labelledby="kehidupan">
+        <h2 id="kehidupan">
+            <span class="stamp"><i class="fa-solid fa-book"></i></span>
+            <span>Doa Kehidupan Sehari-hari</span>
+        </h2>
+    
+        <div class="pasal">
+            <strong>Pasal 1</strong>
+            <small>
+                Semoga tugas sekolah dan masalah di hidupnya tidak menumpuk seperti gunung Himalaya,
+                karena kalau sudah setinggi itu, pasti bikin napas habis bahkan sebelum mendakinya.
+                Biarlah semua urusan datangnya bertahap, satu demi satu, supaya bisa diselesaikan dengan hati yang tenang
+                dan kepala yang tetap dingin. Semoga setiap masalah justru jadi pelajaran berharga,
+                bukan sekadar beban berat yang bikin tidur nggak nyenyak.
+            </small>
+        </div>
+    
+        <div class="pasal">
+            <strong>Pasal 2</strong>
+            <small>
+                Semoga kamu, dan urusan hidub mu selalu terbawa mudah agar kamu senang menjalaninya. sebab jika tidak terjadi hal seperti itu, Angel bisa terus ga mood dan harinya menjadi kacau, disini, saya mengatakan kepada Tuhan, "Tolong selalu sertai angel dalam setiap langkahnya".
+                </small>
+        </div>
+    
+        <div class="pasal">
+            <strong>Pasal 3</strong>
+            <small>
+                Semoga guru', teman' dan kerabat angel menjadi sangat baik dan memiliki pemikiran yang dewasa serta penuh kasih, sebab kita hidup didunia ini bersosialisasi, jadi berikanlah dia hubungan yang menyenangkan, ga bikin dia ga mood. seperti john lennon contohnya.
+            </small>
+        </div>
+    </section>
+
+
+        <section class="doc" aria-labelledby="persahabatan">
+            <h2 id="persahabatan"><span class="stamp"><i class="fa-solid fa-people-group"></i></span><span>Doa
+                    Persahabatan</span></h2>
+            <div class="pasal"><strong>Pasal 4</strong><small>Semoga persahabatan ini awet seperti Indomie yang tak
+                    lekang oleh zaman.</small></div>
+            <div class="pasal"><strong>Pasal 5</strong><small>Semoga ketawa kita selalu terdengar lantang meski suasana
+                    kelas membosankan.</small></div>
+            <div class="pasal"><strong>Pasal 6</strong><small>Semoga Angel terus menjadi sumber hal baik dimanapun dia berada.</small></div>
+        </section>
+
+        <section class="doc" aria-labelledby="masa-depan">
+            <h2 id="masa-depan"><span class="stamp"><i class="fa-solid fa-seedling"></i></span><span>Doa Masa
+                    Depan</span></h2>
+            <div class="pasal"><strong>Pasal 7</strong><small>Semoga semua cita-cita Angel tercapai tanpa mengorbankan
+                    jam tidur siang, sebab akhir' aku chat km, kamu suka bobo siang.</small></div>
+            <div class="pasal"><strong>Pasal 8</strong><small>Semoga langkah-langkah Angel selalu penuh keberanian,
+                    meski kadang tersandung obstacle didepannya.</small></div>
+            <div class="pasal"><strong>Pasal 9</strong><small>Semoga perjalanan hidupmu selalu penuh warna seperti
+                    desain website ini yang dibuat penuh cinta.</small></div>
+        </section>
+
+        <section class="doc" aria-labelledby="galeri">
+            <h2 id="galeri"><span class="stamp"><i class="fa-solid fa-image"></i></span><span>Galeri Memori</span></h2>
+            <p class="lead">Elu lucu banget si!</p>
+            <div class="gallery">
+                <label class="photo-slot">
+                    <div class="slot-text"><img src="Angelmpls.jpg" alt=""></div>
+                </label>
+                <label class="photo-slot">
+                    <div class="slot-text"><img src="Angelperjusasd.jpg" alt=""></div>
+                </label>
+                <label class="photo-slot">
+                    <div class="slot-text"><img src="Angelttd.png" alt=""></div>
+                </label>
+            </div>
+        </section>
+
+        <section class="doc" aria-labelledby="ucapan">
+            <h2 id="ucapan"><span class="stamp"><i class="fa-solid fa-comment-dots"></i></span><span>Ucapan
+                    Rakyat</span></h2>
+            <div class="checklist">
+                <label class="check"><input type="checkbox" checked disabled><span> Selamat ulang tahun
+                        Angel</span></label>
+                <label class="check"><input type="checkbox"><span class="tag-no"> Jalannya jgn lama lama</span></label>
+                <label class="check"><input type="checkbox" checked><span class="tag-yes"> Semoga smakin byutiful, baik en dont
+                         galak.... :V</span></label>
+            </div>
+        </section>
+
+        <section class="doc closing" aria-labelledby="closing">
+            <h3 id="closing">🎀🎀Dengan ini diputuskan bahwa Angel resmi bertambah umur menjadi 14 tahun, berlaku mulai 15
+                September 2025 dan seterusnya.🎀🎀</h3>
+            <p>Website ini dibuat khusus untukmu, Angel. Semoga jadi alasan kamu ketawa dan merasa istimewa hari ini.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>
